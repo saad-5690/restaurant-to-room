@@ -1,3 +1,13 @@
+# c9 Configuration Folder
+.c9/
+
+#Mongo DB data
+/data
+
+# MongoDB Startup Script
+mongod-start
+
+
 # Logs
 logs
 *.log
