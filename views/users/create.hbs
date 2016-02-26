@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-        <title>Room Service {{#if title}} - {{title}}{{/if}} | The Landon Hotel</title>
+        <title>Room Service | The Landon Hotel</title>
         <meta name="description" content="No matter what you're craving, Restaurant to Room has you covered. Our fast and friendly delivery service brings you hot, fresh food, from a diverse choice of local restaurants." />
         <link rel="stylesheet" href="/stylesheets/wp-backgrounds.css" type='text/css' media='all' />
         <link rel='stylesheet' href="/stylesheets/mjCont.css" type='text/css' media='all' />
@@ -56,12 +56,6 @@
                     </div>
                 </nav>
             </header>
-            {{#if firstName}}
-              <div id="greeting" style="float:right">
-                <strong>Hi, {{firstName}}!</strong>
-                <a href="/users/logout">Log out</a>
-              </div>
-            {{/if}}
 	        <div id="main" class="wrapper">
 	            <div id="primary" class="site-content">
 		            <div id="content" role="main">
@@ -77,7 +71,38 @@
 								<div class="panel-grid-cell" id="pgc-218-0-1">									
 									<div id="page-content" class="panel widget panel-first-child panel-last-child">
 										<!-- BEGIN page-specific content -->
-										{{{body}}}
+										<div class="textwidget margin-top-30">
+											<p>No matter what you're craving, <em><strong>Restaurant to Room</strong></em> has you covered. Our fast and friendly delivery service brings you hot, fresh food, from a diverse choice of local restaurants.</p>
+											<p>Simply create an account to get started, select items from a menu, and we'll have food delivered directly to your room, within an hour, or your meal is free. The only difficult part is choosing.  (Sorry, we can't help you with that.)</p>
+										</div>
+										<div class="widget">
+											<form name="create-user-form" id="create-user-form"  method="post">
+												<div class="form-group">
+													<label for="firstName">First name</label>
+													<input type="text" id="firstName" name="firstName" required value="{{input.firstName}}" />
+												</div>
+												<div class="form-group">
+													<label for="lastName">Last name</label>
+													<input type="text" id="lastName" name="lastName" value="{{input.lastName}}"/>
+												</div>
+												<div class="form-group">
+													<label for="roomNumber">Room number</label>
+													<input type="text" id="roomNumber" name="roomNumber" value="{{input.roomNumber}}"/>
+												</div>
+												<div class="form-group">
+													<label for="email">Email</label>
+													<input type="email" id="email" name="email" required value="{{input.email}}"/>
+												</div>
+												<div class="form-group">
+													<label for="password">Password</label>
+													<input type="password" id="password" name="password" autocomplete="off" required value="{{input.password}}"/>
+												</div>
+												<div class="form-submit">
+													<input type="submit" value="Create my account" />
+												</div>
+												<span style="color:red">{{error}}</span>
+											</form>
+										</div>
 										<!-- END page-specific content -->
 									</div>									
 								</div>
