@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET orders list. */
 router.get('/', function(req, res, next) {
-  res.render('orders/index', { title: 'Place an order' });
+    var vm = { 
+        title: 'Place an order',
+        firstName: req.user ? req.user.firstName : null
+    };
+    res.render('orders/index', vm);
 });
 
 module.exports = router;
